@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\code\\mlCode\\MauiDemo\\MauiDemo\\obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\MauiDemo.styles.css",
+      "PackagePath": "staticwebassets\\MauiDemo.styles.css"
+    },
+    {
+      "Id": "F:\\code\\mlCode\\MauiDemo\\MauiDemo\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "F:\\code\\mlCode\\MauiDemo\\MauiDemo\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "F:\\code\\mlCode\\MauiDemo\\MauiDemo\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "F:\\code\\mlCode\\MauiDemo\\MauiDemo\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "F:\\code\\mlCode\\MauiDemo\\MauiDemo\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.MauiDemo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.build.MauiDemo.props",
+      "PackagePath": "build\\MauiDemo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.buildMultiTargeting.MauiDemo.props",
+      "PackagePath": "buildMultiTargeting\\MauiDemo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0-maccatalyst\\maccatalyst-x64\\staticwebassets\\msbuild.buildTransitive.MauiDemo.props",
+      "PackagePath": "buildTransitive\\MauiDemo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

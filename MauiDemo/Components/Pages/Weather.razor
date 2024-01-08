@@ -1,0 +1,80 @@
+﻿@page "/weather"
+@inherits LayoutComponentBase
+
+<h1>Weather</h1>
+
+<p>This component demonstrates showing data.</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <MauiDemo.Components.Layout.Pagination CurrentPage="CurrentPage" TotalCount="TotalCount" PageSize=2 PageChanged="OnPageChanged" />
+}
+
+@code {
+    private WeatherForecast[]? forecastsData { get; set; }
+    private WeatherForecast[]? forecasts { get; set; }
+    private int CurrentPage = 1;
+    private int PageSize = 2;
+    private int TotalCount
+    {
+        get
+        {
+            return forecastsData?.Length ?? 0;
+        }
+    }
+
+    private void OnPageChanged(int NewPage)
+    {
+        CurrentPage = NewPage;
+        GetForecastsData();
+    }
+
+    protected override void OnInitialized()
+    {
+        forecastsData = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateOnly.FromDateTime(DateTime.Now).AddDays(index),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" }[Random.Shared.Next(10)]
+            }).ToArray();
+        GetForecastsData();
+    }
+    private void GetForecastsData()
+    {
+        int startIndex = (CurrentPage - 1) * PageSize;
+        forecasts = forecastsData?.Skip(startIndex).Take(PageSize).ToArray();
+    }
+
+    private class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+        public int TemperatureC { get; set; }
+        public string? Summary { get; set; }
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+}
