@@ -11,13 +11,14 @@
 }
 else
 {
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th scope="col">Date</th>
+                <th scope="col">Temp. (C)</th>
+                <th scope="col">>Temp. (F)</th>
+                <th scope="col">>Summary</th>
+                <th scope="col" class="text-black align-content-center">operate</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,13 @@ else
                     <td>@forecast.TemperatureC</td>
                     <td>@forecast.TemperatureF</td>
                     <td>@forecast.Summary</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-danger">添加</button>
+                            <button type="button" class="btn btn-warning">删除</button>
+                            <button type="button" class="btn btn-success">修改</button>
+                        </div>
+                    </td>
                 </tr>
             }
         </tbody>

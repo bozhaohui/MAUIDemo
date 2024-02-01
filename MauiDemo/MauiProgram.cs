@@ -15,6 +15,7 @@ namespace MauiDemo
                 });
 
             builder.Services.AddMauiBlazorWebView();
+           // builder.Services.AddMudServices();
 
             #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
